@@ -1,16 +1,8 @@
-import React, {
-    useState,
-    useEffect,
-    useRef
-} from 'react';
+import React, { useEffect, useRef, useState } from 'react'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import {
-    Image,
-    TouchableOpacity,
-    ImageBackground
-} from 'react-native';
+import { Image, ImageBackground, TouchableOpacity } from 'react-native'
 
 const resolveAssetSource = Image.resolveAssetSource;
 
@@ -65,7 +57,7 @@ const ScalableImage = props => {
         }
         else {
             const sourceToUse = resolveAssetSource(source);
-            adjustSize(sourceToUse.width, sourceToUse.height, props);
+            if (sourceToUse) adjustSize(sourceToUse.width, sourceToUse.height, props);
         }
     };
 
